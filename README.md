@@ -1,32 +1,64 @@
-# salt-jsfs-jam-blog
+# Contentful Gatsby Starter Blog
 
-## A. Scenario
+Create a [Gatsby](http://gatsbyjs.com/) blog powered by [Contentful](https://www.contentful.com).
 
-In this lab you will get your hands dirty with the JAM Stack, a very modern way of building a website, and get a first site up that are using J(avaScript) A(PIs) and M(arkup).
+![An article page of the starter blog](./screenshot.png "An article page of the starter blog")
 
-## B. What you will be working on today
+Static sites are scalable, secure and have very little required maintenance. They come with a drawback though. Not everybody feels good editing files, building a project and uploading it somewhere. This is where Contentful comes into play.
 
-Today you will be building a blog using some of the most common tools to do this:
+With Contentful and Gatsby you can connect your favorite static site generator with an API that provides an easy to use interface for people writing content and automate the publishing using services like [Travis CI](https://travis-ci.org/) or [Netlify](https://www.netlify.com/).
 
-* [Gatsby](https://www.gatsbyjs.org/)  to build/generate the site
-* [Contentful](https://www.contentful.com/) to store and deliver the content
-* [Netlifly](https://www.netlify.com/) to deploy the site
+## Features
 
-## C. Lab instructions
+- Simple content model and structure. Easy to adjust to your needs.
+- Use the [synchronization feature](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/synchronization) of our [Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/).
+- Responsive/adaptive images via [gatsby-plugin-image](https://www.gatsbyjs.org/packages/gatsby-plugin-image/) and our [Images API](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/synchronization/initial-synchronization-of-entries-of-a-specific-content-type).
 
-1. Follow this guide to get started with the contentful setup:
-https://www.contentful.com/r/knowledgebase/gatsbyjs-and-contentful-in-five-minutes/
+## Getting started
 
-2. Create your own GitHub repo and push this code to it.
+See our [official Contentful getting started guide](https://www.contentful.com/developers/docs/tutorials/general/get-started/).
 
-3. Inspect the codebase and try to understand how it's setup.
+### Get the source code and install dependencies.
 
-4. Create a "products" page to display a list of products similar to how the "blog" page is set up.
-  * This page should display a list of products from Contentful. You need create a new Content Model and add content for this to work.
-  * You should be able to click on a product to be redirected to a product page.
+```
+$ git clone https://github.com/contentful/starter-gatsby-blog.git
+$ npm install
+```
 
-5. Create an account of Netlify and deploy your application by linking to your GitHub repo.
+Or use the [Gatsby CLI](https://www.npmjs.com/package/gatsby-cli).
 
----
+```
+$ gatsby new contentful-starter-blog https://github.com/contentful/starter-gatsby-blog/
+```
 
-Good luck and have fun!
+### Set up of the needed content model and create a configuration file
+
+This project comes with a Contentful setup command `npm run setup`.
+
+This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the needed content model into the space you define and write a config file (`./.contentful.json`).
+
+`npm run setup` automates that for you but if you want to do it yourself rename `.contentful.json.sample` to `.contentful.json` and add your configuration in this file.
+
+## Crucial Commands
+
+### `npm run dev`
+
+Run the project locally with live reload in development mode.
+
+### `npm run build`
+
+Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
+
+### `npm run serve`
+
+Spin up a production-ready server with your blog. Don't forget to build your page beforehand.
+
+## Deployment
+
+See the [official Contentful getting started guide](https://www.contentful.com/developers/docs/tutorials/general/get-started/).
+
+## Contribution
+
+Feel free to open pull requests to fix bugs. If you want to add features, please have a look at the [original version](https://github.com/contentful-userland/gatsby-contentful-starter). It is always open to contributions and pull requests.
+
+You can learn more about how Contentful userland is organized by visiting [our about repository](https://github.com/contentful-userland/about).
