@@ -1,29 +1,26 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import get from 'lodash/get'
 
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
-import ArticlePreview from '../components/article-preview'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-class Products extends React.Component {
-  render() {
-    const posts = get(this, 'props.data.allContentfulProduct.edges')
-
-    return (
-      <Layout location={this.props.location}>
-        <Seo title="Blog" />
-        <Hero title="Blog" />
-        <h1>
-          {posts.map((post) => (
-            <p>{post.node.name}</p>
-          ))}
-        </h1>
-        {/* <ArticlePreview posts={posts} /> */}
-      </Layout>
-    )
-  }
+const Products = ({ data }) => {
+  return (
+    <Layout location="/products">
+      <Seo title="Product" />
+      <Hero title="Product" />
+      {data.allContentfulProduct.edges.map((post) => (
+        <div>
+          <GatsbyImage alt="" image={post.node.image.gatsbyImageData} />
+          <h3>{post.node.name}</h3>
+          <p>{post.node.price} $</p>
+          <p>{post.node.description.description}</p>
+        </div>
+      ))}
+    </Layout>
+  )
 }
 
 export default Products
