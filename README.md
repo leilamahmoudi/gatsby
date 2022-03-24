@@ -14,9 +14,6 @@ Today you will be building a blog using some of the most common tools to do this
 
 ## C. Lab instructions
 
-There are many good articles out there. We have supplied you with a starter template with some boilerplate code. It's based off of the contentful-starter referenced in the article below. However, you will use the code in this repo rather than cloning a new template linked in the article.
-
-
 1. Follow this guide to get started with the contentful setup:
 https://www.contentful.com/r/knowledgebase/gatsbyjs-and-contentful-in-five-minutes/
 
